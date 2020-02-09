@@ -12,6 +12,13 @@ module.exports = {
     entry: {
         'main': './src/index.js'
     },
+    devServer: {
+        contentBase: './dist',
+        open: true,
+        proxy: {
+            '/api': 'http://localhost:3000'
+        }
+    },
     output: {
         // publicPath: 'http://cdn.com.cn',
         filename: '[name].js',
