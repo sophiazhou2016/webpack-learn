@@ -1,10 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+// plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
 
 module.exports = {
     mode: 'development',
     entry: {
-        'main': './src/index.js'
+        'main': './src/index.js',
+        'sub': './src/index.js'
     },
     output: {
         filename: 'bundle.js',
@@ -45,5 +49,5 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         template: 'src/index.html'
-    })]
-};
+    }), new CleanWebpackPlugin()]
+};  
