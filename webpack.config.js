@@ -11,6 +11,7 @@ module.exports = {
         'sub': './src/index.js'
     },
     output: {
+        publicPath: 'http://cdn.com.cn',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
