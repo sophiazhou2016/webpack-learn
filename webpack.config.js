@@ -5,13 +5,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
 
 module.exports = {
-    mode: 'development',
+    // mode: 'development',
+    // devtool: 'cheap-module-eval-source-map',
+    mode: 'production',
+    devtool: 'cheap-module-source-map',
     entry: {
-        'main': './src/index.js',
-        'sub': './src/index.js'
+        'main': './src/index.js'
     },
     output: {
-        publicPath: 'http://cdn.com.cn',
+        // publicPath: 'http://cdn.com.cn',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },

@@ -1,4 +1,1 @@
-var root = document.getElementById('root');
-import './index.scss';
-
-root.innerHTML = '<div class="iconfont iconaixin"></div>';
+consele.log('hello world');
