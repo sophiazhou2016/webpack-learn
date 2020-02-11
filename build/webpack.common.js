@@ -1,32 +1,10 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
-// plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
+const path = require('path');
 
 module.exports = {
-    mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
-    // mode: 'production',
-    // devtool: 'cheap-module-source-map',
     entry: {
         'main': './src/index.js'
-    },
-    devServer: {
-        contentBase: './dist',
-        open: true,
-        port: 8080,
-        hot: true
-        // hotOnly: true
-        // proxy: {
-        //     '/api': 'http://localhost:3000'
-        // }
-    },
-    output: {
-        // publicPath: 'http://cdn.com.cn',
-        publicPath: '/',
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [{
@@ -74,27 +52,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
-        new CleanWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new CleanWebpackPlugin()
     ],
-    optimization: {
-        usedExports: true
+    output: {
+        // publicPath: 'http://cdn.com.cn',
+        publicPath: '',
+        filename: '[name].js',
+        path: path.resolve(__dirname, '../dist')
     }
-};  
-
-
-// presets: [['@babel/preset-env', {
-//     targets: {
-//         chrome: "67"
-//     },
-//     useBuiltIns: 'usage'
-// }]]
-
-// "plugins": [["@babel/plugin-transform-runtime",
-//         {
-//             "corejs": 2,
-//             "helpers": true,
-//             "regenerator": true,
-//             "useESModules": false
-//         }
-//     ]]
+};
