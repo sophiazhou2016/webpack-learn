@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
@@ -40,6 +41,8 @@
     "last 3 iOS versions"
   ],
   "dependencies": {
-    "@babel/polyfill": "^7.8.3"
+    "@babel/polyfill": "^7.8.3",
+    "@babel/runtime": "^7.8.4",
+    "@babel/runtime-corejs2": "^7.8.4"
   }
 }
