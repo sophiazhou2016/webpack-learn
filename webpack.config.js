@@ -5,10 +5,10 @@ const webpack = require('webpack');
 // plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
 
 module.exports = {
-    mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
-    // mode: 'production',
-    // devtool: 'cheap-module-source-map',
+    // mode: 'development',
+    // devtool: 'cheap-module-eval-source-map',
+    mode: 'production',
+    devtool: 'cheap-module-source-map',
     entry: {
         'main': './src/index.js'
     },
@@ -24,7 +24,7 @@ module.exports = {
     },
     output: {
         // publicPath: 'http://cdn.com.cn',
-        publicPath: '/',
+        publicPath: './',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
@@ -76,7 +76,10 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin()
-    ]
+    ],
+    // optimization: {
+    //     usedExports: true
+    // }
 };  
 
 
