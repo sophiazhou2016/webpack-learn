@@ -7,7 +7,8 @@
   "scripts": {
     "bundle": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "build" : "webpack --config webpack.product.js",
     "server": "node server.js"
   },
   "author": "",
