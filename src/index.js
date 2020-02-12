@@ -1,6 +1,18 @@
 // import '@babel/polyfill';
 
+import _ from 'lodash';
 
-import { add } from './math';
+console.log(_.join(['a', 'b', 'c'], '***'));
+console.log(_.join(['a', 'd', 'c'], '***'));
 
-add(1, 7);
+// function getComponent() {
+//     return import('lodash').then(({default: _}) => {
+//         var element = document.createElement('div');
+//         element.innerHTML = _.join(['Dell', 'Lee'], '-');
+//         return element;
+//     });
+// }
+
+// getComponent().then(element => {
+//     document.body.appendChild(element);
+// });
