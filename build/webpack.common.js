@@ -54,11 +54,11 @@ module.exports = {
         }),
         new CleanWebpackPlugin()
     ],
-    optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
-    },
+    // optimization: {
+    //     splitChunks: {
+    //         chunks: 'all'
+    //     }
+    // },
     output: {
         // publicPath: 'http://cdn.com.cn',
         publicPath: '',
