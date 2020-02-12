@@ -1,6 +1,9 @@
 // import '@babel/polyfill';
 
 // import _ from 'lodash';
+// var element = document.createElement('div');
+// element.innerHTML = _.join(['Dell', 'Lee'], '-');
+// document.body.appendChild(element);
 
 // console.log(_.join(['a', 'b', 'c'], '***'));
 // console.log(_.join(['a', 'd', 'c'], '***'));
@@ -13,6 +16,9 @@ function getComponent() {
     });
 }
 
-getComponent().then(element => {
-    document.body.appendChild(element);
+document.addEventListener('click',() => {
+    getComponent().then(element => {
+        document.body.appendChild(element);
+    });
 });
+
