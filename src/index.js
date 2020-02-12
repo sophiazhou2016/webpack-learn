@@ -8,12 +8,11 @@
 // console.log(_.join(['a', 'b', 'c'], '***'));
 // console.log(_.join(['a', 'd', 'c'], '***'));
 
-function getComponent() {
-    return import(/* webpackChunkName:"lodash" */ 'lodash').then(({default: _}) => {
-        var element = document.createElement('div');
-        element.innerHTML = _.join(['Dell', 'Lee'], '-');
-        return element;
-    });
+async function getComponent() {
+    const { default: _ } = await import(/* webpackChunkName:"lodash" */ 'lodash');
+    const element = document.createElement('div');
+    element.innerHTML = _.join(['Dell', 'Lee'], '-');
+    return element;
 }
 
 document.addEventListener('click',() => {
