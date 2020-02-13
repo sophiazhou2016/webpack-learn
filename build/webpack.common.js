@@ -35,12 +35,16 @@ module.exports = {
         }),
         new CleanWebpackPlugin()
     ],
+    performance: false,
     optimization: {
+        runtimeChunk: {
+            name: 'runtime'
+        },
         usedExports: true,
         splitChunks: {
             chunks: "all", // async-默认异步代码
             minSize: 30000,
-            minChunks: 2, // 打包生成的chunks里面有几个引用了lodash,>=2才分割
+            minChunks: 1, // 打包生成的chunks里面有几个引用了lodash,>=2才分割
             maxAsyncRequests: 5,
             maxInitialRequests: 3,
             automaticNameDelimiter: '~',
@@ -48,7 +52,8 @@ module.exports = {
             cacheGroups: {
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
-                    priority: -10
+                    priority: -10,
+                    name: 'venders'
                 },
             default: {
                     minChunks: 2,
@@ -61,8 +66,7 @@ module.exports = {
     output: {
         // publicPath: 'http://cdn.com.cn',
         publicPath: '',
-        filename: '[name].js',
-        chunkFilename: '[name].chunk.js',
+        
         path: path.resolve(__dirname, '../dist')
     }
 };

@@ -1,29 +1,6 @@
-import './style.css';
-console.log('leelo world');
+import _ from 'lodash';
+import $ from 'jquery';
 
-// import '@babel/polyfill';
-
-// import _ from 'lodash';
-// var element = document.createElement('div');
-// element.innerHTML = _.join(['Dell', 'Lee'], '-');
-// document.body.appendChild(element);
-
-// console.log(_.join(['a', 'b', 'c'], '***'));
-// console.log(_.join(['a', 'd', 'c'], '***'));
-
-// async function getComponent() {
-//     const { default: _ } = await import(/* webpackChunkName:"lodash" */ 'lodash');
-//     const element = document.createElement('div');
-//     element.innerHTML = _.join(['Dell', 'Lee'], '-');
-//     return element;
-// }
-
-// getComponent().then(element => {
-//     document.body.appendChild(element);
-// });
-// document.addEventListener('click',() => {
-//     import(/* webpackPrefetch: true */'./click').then(({default: func}) => {
-//         func();
-//     });
-// });
-
+const dom = $('div');
+dom.html(_.join(['Dell', 'Lee'], '***'));
+$('body').append(dom);
