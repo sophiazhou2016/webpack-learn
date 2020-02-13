@@ -56,9 +56,9 @@ module.exports = {
     ],
     optimization: {
         splitChunks: {
-            chunks: "async", // async-异步代码
+            chunks: "all", // async-默认异步代码
             minSize: 0,
-            minChunks: 1,
+            minChunks: 2, // 打包生成的chunks里面有几个引用了lodash,>=2才分割
             maxAsyncRequests: 5,
             maxInitialRequests: 3,
             automaticNameDelimiter: '~',

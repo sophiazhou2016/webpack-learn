@@ -7,7 +7,7 @@
   "scripts": {
     "bundle": "webpack",
     "watch": "webpack --watch",
-    "dev-build": "webpack --config ./build/webpack.dev.js",
+    "dev-build": "webpack --profile --json > stats.json --config ./build/webpack.dev.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.product.js",
     "server": "node server.js"
@@ -32,6 +32,7 @@
     "style-loader": "^1.1.3",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.5",
+    "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.3",

@@ -2,6 +2,7 @@ const webpack = require('webpack');
 // plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const devConfig = {
     mode: 'development',
@@ -17,7 +18,8 @@ const devConfig = {
         // }
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin()
     ],
     optimization: {
         usedExports: true
