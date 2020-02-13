@@ -2,11 +2,35 @@ const webpack = require('webpack');
 // plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const devConfig = {
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader', 
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2,
+                            // modules: true
+                        }
+                    },
+                    'sass-loader',
+                    'postcss-loader'
+                ]
+            }, {
+                test: /\.css$/,
+                use: [
+                    'style-loader', 'css-loader', 'postcss-loader'
+                ]
+            }
+        ]
+    },
     devServer: {
         contentBase: './dist',
         open: true,
@@ -19,11 +43,9 @@ const devConfig = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin()
+        // new BundleAnalyzerPlugin()
     ],
-    optimization: {
-        usedExports: true
-    }
+    
 };  
 
 

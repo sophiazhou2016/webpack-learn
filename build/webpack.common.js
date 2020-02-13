@@ -24,25 +24,6 @@ module.exports = {
                 loader: 'file-loader'
             }
         },{
-            test: /\.scss$/,
-            use: [
-                'style-loader', 
-                {
-                    loader: 'css-loader',
-                    options: {
-                        importLoaders: 2,
-                        // modules: true
-                    }
-                },
-                'sass-loader',
-                'postcss-loader'
-            ]
-        }, {
-            test: /\.css$/,
-            use: [
-                'style-loader', 'css-loader', 'postcss-loader'
-            ]
-        }, {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader'
@@ -55,9 +36,10 @@ module.exports = {
         new CleanWebpackPlugin()
     ],
     optimization: {
+        usedExports: true,
         splitChunks: {
             chunks: "all", // async-默认异步代码
-            minSize: 0,
+            minSize: 30000,
             minChunks: 2, // 打包生成的chunks里面有几个引用了lodash,>=2才分割
             maxAsyncRequests: 5,
             maxInitialRequests: 3,
@@ -80,6 +62,7 @@ module.exports = {
         // publicPath: 'http://cdn.com.cn',
         publicPath: '',
         filename: '[name].js',
+        chunkFilename: '[name].chunk.js',
         path: path.resolve(__dirname, '../dist')
     }
 };

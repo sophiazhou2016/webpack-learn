@@ -4,13 +4,13 @@ Use Ctrl+C to close it
   "errors": [],
   "warnings": [],
   "version": "4.41.5",
-  "hash": "7970d8bd28fc1e8460f8",
-  "time": 1033,
-  "builtAt": 1581573623564,
+  "hash": "794e75b97c3d2094374a",
+  "time": 1163,
+  "builtAt": 1581582683328,
   "publicPath": "",
   "outputPath": "/Users/zhourongjing/Documents/webpack-learn/dist",
   "assetsByChunkName": {
-    "lodash": "lodash.js",
+    "lodash": "lodash.chunk.js",
     "main": "main.js"
   },
   "assets": [
@@ -23,7 +23,7 @@ Use Ctrl+C to close it
       "emitted": true
     },
     {
-      "name": "lodash.js",
+      "name": "lodash.chunk.js",
       "size": 1421875,
       "chunks": [
         "lodash"
@@ -36,7 +36,7 @@ Use Ctrl+C to close it
     },
     {
       "name": "main.js",
-      "size": 36329,
+      "size": 36602,
       "chunks": [
         "main"
       ],
@@ -76,7 +76,7 @@ Use Ctrl+C to close it
         "lodash"
       ],
       "assets": [
-        "lodash.js"
+        "lodash.chunk.js"
       ],
       "children": {},
       "childAssets": {}
@@ -93,7 +93,7 @@ Use Ctrl+C to close it
         "lodash"
       ],
       "files": [
-        "lodash.js"
+        "lodash.chunk.js"
       ],
       "hash": "65cd7c7e10ee1d761ed3",
       "siblings": [],
@@ -126,14 +126,14 @@ Use Ctrl+C to close it
               "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/babel-loader/lib/index.js!/Users/zhourongjing/Documents/webpack-learn/src/index.js",
               "name": "./src/index.js",
               "profile": {
-                "factory": 63,
-                "building": 509
+                "factory": 56,
+                "building": 635
               }
             }
           ],
           "profile": {
             "factory": 2,
-            "building": 258
+            "building": 263
           },
           "failed": false,
           "errors": 0,
@@ -179,8 +179,8 @@ Use Ctrl+C to close it
               "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/babel-loader/lib/index.js!/Users/zhourongjing/Documents/webpack-learn/src/index.js",
               "name": "./src/index.js",
               "profile": {
-                "factory": 63,
-                "building": 509
+                "factory": 56,
+                "building": 635
               }
             },
             {
@@ -189,13 +189,13 @@ Use Ctrl+C to close it
               "name": "./node_modules/lodash/lodash.js",
               "profile": {
                 "factory": 2,
-                "building": 258
+                "building": 263
               }
             }
           ],
           "profile": {
             "factory": 13,
-            "building": 3
+            "building": 2
           },
           "failed": false,
           "errors": 0,
@@ -241,8 +241,8 @@ Use Ctrl+C to close it
               "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/babel-loader/lib/index.js!/Users/zhourongjing/Documents/webpack-learn/src/index.js",
               "name": "./src/index.js",
               "profile": {
-                "factory": 63,
-                "building": 509
+                "factory": 56,
+                "building": 635
               }
             },
             {
@@ -251,13 +251,13 @@ Use Ctrl+C to close it
               "name": "./node_modules/lodash/lodash.js",
               "profile": {
                 "factory": 2,
-                "building": 258
+                "building": 263
               }
             }
           ],
           "profile": {
             "factory": 13,
-            "building": 3
+            "building": 2
           },
           "failed": false,
           "errors": 0,
@@ -299,14 +299,14 @@ Use Ctrl+C to close it
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 665,
+      "size": 774,
       "names": [
         "main"
       ],
       "files": [
         "main.js"
       ],
-      "hash": "9f7af6aa3755819c908d",
+      "hash": "0fa1d20d6dca56a72629",
       "siblings": [],
       "parents": [],
       "children": [
@@ -320,7 +320,7 @@ Use Ctrl+C to close it
           "name": "./src/index.js",
           "index": 0,
           "index2": 0,
-          "size": 665,
+          "size": 774,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -333,8 +333,8 @@ Use Ctrl+C to close it
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 63,
-            "building": 509
+            "factory": 56,
+            "building": 635
           },
           "failed": false,
           "errors": 0,
@@ -355,7 +355,7 @@ Use Ctrl+C to close it
           "providedExports": null,
           "optimizationBailout": [],
           "depth": 0,
-          "source": "// import '@babel/polyfill';\n// import _ from 'lodash';\n// var element = document.createElement('div');\n// element.innerHTML = _.join(['Dell', 'Lee'], '-');\n// document.body.appendChild(element);\n// console.log(_.join(['a', 'b', 'c'], '***'));\n// console.log(_.join(['a', 'd', 'c'], '***'));\nasync function getComponent() {\n  const {\n    default: _\n  } = await import(\n  /* webpackChunkName:\"lodash\" */\n  'lodash');\n  const element = document.createElement('div');\n  element.innerHTML = _.join(['Dell', 'Lee'], '-');\n  return element;\n}\n\ndocument.addEventListener('click', () => {\n  getComponent().then(element => {\n    document.body.appendChild(element);\n  });\n});"
+          "source": "// import '@babel/polyfill';\n// import _ from 'lodash';\n// var element = document.createElement('div');\n// element.innerHTML = _.join(['Dell', 'Lee'], '-');\n// document.body.appendChild(element);\n// console.log(_.join(['a', 'b', 'c'], '***'));\n// console.log(_.join(['a', 'd', 'c'], '***'));\nasync function getComponent() {\n  const {\n    default: _\n  } = await import(\n  /* webpackChunkName:\"lodash\" */\n  'lodash');\n  const element = document.createElement('div');\n  element.innerHTML = _.join(['Dell', 'Lee'], '-');\n  return element;\n}\n\ngetComponent().then(element => {\n  document.body.appendChild(element);\n}); // document.addEventListener('click',() => {\n//     import(/* webpackPrefetch: true */'./click').then(({default: func}) => {\n//         func();\n//     });\n// });"
         }
       ],
       "filteredModules": 0,
@@ -395,14 +395,14 @@ Use Ctrl+C to close it
           "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/babel-loader/lib/index.js!/Users/zhourongjing/Documents/webpack-learn/src/index.js",
           "name": "./src/index.js",
           "profile": {
-            "factory": 63,
-            "building": 509
+            "factory": 56,
+            "building": 635
           }
         }
       ],
       "profile": {
         "factory": 2,
-        "building": 258
+        "building": 263
       },
       "failed": false,
       "errors": 0,
@@ -448,8 +448,8 @@ Use Ctrl+C to close it
           "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/babel-loader/lib/index.js!/Users/zhourongjing/Documents/webpack-learn/src/index.js",
           "name": "./src/index.js",
           "profile": {
-            "factory": 63,
-            "building": 509
+            "factory": 56,
+            "building": 635
           }
         },
         {
@@ -458,13 +458,13 @@ Use Ctrl+C to close it
           "name": "./node_modules/lodash/lodash.js",
           "profile": {
             "factory": 2,
-            "building": 258
+            "building": 263
           }
         }
       ],
       "profile": {
         "factory": 13,
-        "building": 3
+        "building": 2
       },
       "failed": false,
       "errors": 0,
@@ -510,8 +510,8 @@ Use Ctrl+C to close it
           "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/babel-loader/lib/index.js!/Users/zhourongjing/Documents/webpack-learn/src/index.js",
           "name": "./src/index.js",
           "profile": {
-            "factory": 63,
-            "building": 509
+            "factory": 56,
+            "building": 635
           }
         },
         {
@@ -520,13 +520,13 @@ Use Ctrl+C to close it
           "name": "./node_modules/lodash/lodash.js",
           "profile": {
             "factory": 2,
-            "building": 258
+            "building": 263
           }
         }
       ],
       "profile": {
         "factory": 13,
-        "building": 3
+        "building": 2
       },
       "failed": false,
       "errors": 0,
@@ -555,7 +555,7 @@ Use Ctrl+C to close it
       "name": "./src/index.js",
       "index": 0,
       "index2": 0,
-      "size": 665,
+      "size": 774,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -568,8 +568,8 @@ Use Ctrl+C to close it
       "issuerName": null,
       "issuerPath": null,
       "profile": {
-        "factory": 63,
-        "building": 509
+        "factory": 56,
+        "building": 635
       },
       "failed": false,
       "errors": 0,
@@ -590,7 +590,7 @@ Use Ctrl+C to close it
       "providedExports": null,
       "optimizationBailout": [],
       "depth": 0,
-      "source": "// import '@babel/polyfill';\n// import _ from 'lodash';\n// var element = document.createElement('div');\n// element.innerHTML = _.join(['Dell', 'Lee'], '-');\n// document.body.appendChild(element);\n// console.log(_.join(['a', 'b', 'c'], '***'));\n// console.log(_.join(['a', 'd', 'c'], '***'));\nasync function getComponent() {\n  const {\n    default: _\n  } = await import(\n  /* webpackChunkName:\"lodash\" */\n  'lodash');\n  const element = document.createElement('div');\n  element.innerHTML = _.join(['Dell', 'Lee'], '-');\n  return element;\n}\n\ndocument.addEventListener('click', () => {\n  getComponent().then(element => {\n    document.body.appendChild(element);\n  });\n});"
+      "source": "// import '@babel/polyfill';\n// import _ from 'lodash';\n// var element = document.createElement('div');\n// element.innerHTML = _.join(['Dell', 'Lee'], '-');\n// document.body.appendChild(element);\n// console.log(_.join(['a', 'b', 'c'], '***'));\n// console.log(_.join(['a', 'd', 'c'], '***'));\nasync function getComponent() {\n  const {\n    default: _\n  } = await import(\n  /* webpackChunkName:\"lodash\" */\n  'lodash');\n  const element = document.createElement('div');\n  element.innerHTML = _.join(['Dell', 'Lee'], '-');\n  return element;\n}\n\ngetComponent().then(element => {\n  document.body.appendChild(element);\n}); // document.addEventListener('click',() => {\n//     import(/* webpackPrefetch: true */'./click').then(({default: func}) => {\n//         func();\n//     });\n// });"
     }
   ],
   "filteredModules": 0,
@@ -681,8 +681,8 @@ Use Ctrl+C to close it
               "issuerName": null,
               "issuerPath": null,
               "profile": {
-                "factory": 36,
-                "building": 28
+                "factory": 35,
+                "building": 25
               },
               "failed": false,
               "errors": 0,
@@ -727,14 +727,14 @@ Use Ctrl+C to close it
                   "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/html-webpack-plugin/lib/loader.js!/Users/zhourongjing/Documents/webpack-learn/src/index.html",
                   "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
                   "profile": {
-                    "factory": 36,
-                    "building": 28
+                    "factory": 35,
+                    "building": 25
                   }
                 }
               ],
               "profile": {
                 "factory": 3,
-                "building": 687
+                "building": 820
               },
               "failed": false,
               "errors": 0,
@@ -780,8 +780,8 @@ Use Ctrl+C to close it
                   "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/html-webpack-plugin/lib/loader.js!/Users/zhourongjing/Documents/webpack-learn/src/index.html",
                   "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
                   "profile": {
-                    "factory": 36,
-                    "building": 28
+                    "factory": 35,
+                    "building": 25
                   }
                 },
                 {
@@ -790,12 +790,12 @@ Use Ctrl+C to close it
                   "name": "./node_modules/lodash/lodash.js",
                   "profile": {
                     "factory": 3,
-                    "building": 687
+                    "building": 820
                   }
                 }
               ],
               "profile": {
-                "factory": 98,
+                "factory": 94,
                 "building": 2
               },
               "failed": false,
@@ -842,8 +842,8 @@ Use Ctrl+C to close it
                   "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/html-webpack-plugin/lib/loader.js!/Users/zhourongjing/Documents/webpack-learn/src/index.html",
                   "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
                   "profile": {
-                    "factory": 36,
-                    "building": 28
+                    "factory": 35,
+                    "building": 25
                   }
                 },
                 {
@@ -852,12 +852,12 @@ Use Ctrl+C to close it
                   "name": "./node_modules/lodash/lodash.js",
                   "profile": {
                     "factory": 3,
-                    "building": 687
+                    "building": 820
                   }
                 }
               ],
               "profile": {
-                "factory": 98,
+                "factory": 94,
                 "building": 2
               },
               "failed": false,
@@ -915,8 +915,8 @@ Use Ctrl+C to close it
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 36,
-            "building": 28
+            "factory": 35,
+            "building": 25
           },
           "failed": false,
           "errors": 0,
@@ -961,14 +961,14 @@ Use Ctrl+C to close it
               "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/html-webpack-plugin/lib/loader.js!/Users/zhourongjing/Documents/webpack-learn/src/index.html",
               "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
               "profile": {
-                "factory": 36,
-                "building": 28
+                "factory": 35,
+                "building": 25
               }
             }
           ],
           "profile": {
             "factory": 3,
-            "building": 687
+            "building": 820
           },
           "failed": false,
           "errors": 0,
@@ -1014,8 +1014,8 @@ Use Ctrl+C to close it
               "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/html-webpack-plugin/lib/loader.js!/Users/zhourongjing/Documents/webpack-learn/src/index.html",
               "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
               "profile": {
-                "factory": 36,
-                "building": 28
+                "factory": 35,
+                "building": 25
               }
             },
             {
@@ -1024,12 +1024,12 @@ Use Ctrl+C to close it
               "name": "./node_modules/lodash/lodash.js",
               "profile": {
                 "factory": 3,
-                "building": 687
+                "building": 820
               }
             }
           ],
           "profile": {
-            "factory": 98,
+            "factory": 94,
             "building": 2
           },
           "failed": false,
@@ -1076,8 +1076,8 @@ Use Ctrl+C to close it
               "identifier": "/Users/zhourongjing/Documents/webpack-learn/node_modules/html-webpack-plugin/lib/loader.js!/Users/zhourongjing/Documents/webpack-learn/src/index.html",
               "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
               "profile": {
-                "factory": 36,
-                "building": 28
+                "factory": 35,
+                "building": 25
               }
             },
             {
@@ -1086,12 +1086,12 @@ Use Ctrl+C to close it
               "name": "./node_modules/lodash/lodash.js",
               "profile": {
                 "factory": 3,
-                "building": 687
+                "building": 820
               }
             }
           ],
           "profile": {
-            "factory": 98,
+            "factory": 94,
             "building": 2
           },
           "failed": false,

@@ -1,3 +1,6 @@
+import './style.css';
+console.log('leelo world');
+
 // import '@babel/polyfill';
 
 // import _ from 'lodash';
@@ -15,13 +18,12 @@
 //     return element;
 // }
 
-document.addEventListener('click',() => {
-    import(/* webpackPrefetch: true */'./click').then(({default: func}) => {
-        func();
-    });
-
-    // getComponent().then(element => {
-    //     document.body.appendChild(element);
-    // });
-});
+// getComponent().then(element => {
+//     document.body.appendChild(element);
+// });
+// document.addEventListener('click',() => {
+//     import(/* webpackPrefetch: true */'./click').then(({default: func}) => {
+//         func();
+//     });
+// });
 
