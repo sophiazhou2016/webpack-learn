@@ -48,7 +48,7 @@ const devConfig = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         // new BundleAnalyzerPlugin()
-    ],
+    ]
     
 };  
 
