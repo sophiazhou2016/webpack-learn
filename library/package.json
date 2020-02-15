@@ -10,6 +10,7 @@
   "author": "sophiazhou",
   "license": "MIT",
   "devDependencies": {
+    "lodash": "^4.17.15",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   }
