@@ -59,5 +59,14 @@
     "@babel/runtime-corejs2": "^7.8.4",
     "lodash": "^4.17.15",
     "optimize-css-assets-webpack-plugin": "^5.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sophiazhou2016/webpack-learn.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/sophiazhou2016/webpack-learn/issues"
+  },
+  "homepage": "https://github.com/sophiazhou2016/webpack-learn#readme"
 }
