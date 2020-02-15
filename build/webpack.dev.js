@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 // plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
-const merge = require('webpack-merge');
-const commonConfig = require('./webpack.common.js');
+// const merge = require('webpack-merge');
+// const commonConfig = require('./webpack.common.js');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const devConfig = {
@@ -53,7 +53,7 @@ const devConfig = {
 };  
 
 
-module.exports = merge(commonConfig ,devConfig);
+module.exports = devConfig;
 
 // presets: [['@babel/preset-env', {
 //     targets: {

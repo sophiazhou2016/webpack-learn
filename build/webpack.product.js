@@ -1,9 +1,9 @@
 
 // plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
-const merge = require('webpack-merge');
+// const merge = require('webpack-merge');
 const MiniCssExtactPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
-const commonConfig = require('./webpack.common.js');
+// const commonConfig = require('./webpack.common.js');
 
 
 const prodConfig = {
@@ -52,4 +52,4 @@ const prodConfig = {
     ]
 };  
 
-module.exports = merge(commonConfig, prodConfig);
+module.exports = prodConfig;
