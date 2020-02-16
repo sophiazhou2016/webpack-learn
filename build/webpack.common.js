@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
@@ -7,6 +8,33 @@ const merge = require('webpack-merge');
 const devConfig = require('./webpack.dev.js');
 const prodConfig = require('./webpack.product.js');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
+
+const plugins = [
+    new HtmlWebpackPlugin({
+        template: 'src/index.html'
+    }),
+    new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        _join: ['lodash', 'join']
+    })
+];
+
+const files = fs.readdirSync(path.resolve(__dirname, '../dll'));
+files.forEach(file => {
+    if(/.*\.dll.js/.test(file)) {
+        plugins.push(new AddAssetHtmlWebpackPlugin({
+            filepath: path.resolve(__dirname, '../dll', file)
+        }));
+    }
+    if(/.*\.manifest.js/.test(file)) {
+        plugins.push(new webpack.DllReferencePlugin({
+            manifest: path.resolve(__dirname, '../dll', file)
+        }));
+    }
+});
+
+console.log('files:', files);
 
 const commonConfig = {
     entry: {
@@ -41,22 +69,7 @@ const commonConfig = {
             loader: ['babel-loader', 'eslint-loader']
         }]
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: 'src/index.html'
-        }),
-        new CleanWebpackPlugin(),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            _join: ['lodash', 'join']
-        }),
-        new AddAssetHtmlWebpackPlugin({
-            filepath: path.resolve(__dirname, '../dll/vendors.dll.js')
-        }),
-        new webpack.DllReferencePlugin({
-            manifest: path.resolve(__dirname, '../dll/vendors.manifest.js')
-        })
-    ],
+    plugins,
     performance: false,
     optimization: {
         runtimeChunk: {
