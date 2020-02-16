@@ -9,36 +9,51 @@ const devConfig = require('./webpack.dev.js');
 const prodConfig = require('./webpack.product.js');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 
-const plugins = [
-    new HtmlWebpackPlugin({
-        template: 'src/index.html'
-    }),
-    new CleanWebpackPlugin(),
-    new webpack.ProvidePlugin({
-        $: 'jquery',
-        _join: ['lodash', 'join']
-    })
-];
-
-const files = fs.readdirSync(path.resolve(__dirname, '../dll'));
-files.forEach(file => {
-    if(/.*\.dll.js/.test(file)) {
-        plugins.push(new AddAssetHtmlWebpackPlugin({
-            filepath: path.resolve(__dirname, '../dll', file)
+const makePlugins = (configs) => {
+    const plugins = [
+        new CleanWebpackPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            _join: ['lodash', 'join']
+        })];
+    Object.keys(configs.entry).forEach(item => {
+        console.log('item:', item);
+        plugins.push(new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            filename: `${item}.html`,
+            chunks: ['runtime', 'venders', item]
         }));
-    }
-    if(/.*\.manifest.js/.test(file)) {
-        plugins.push(new webpack.DllReferencePlugin({
-            manifest: path.resolve(__dirname, '../dll', file)
-        }));
-    }
-});
+    });
 
-console.log('files:', files);
+    const files = fs.readdirSync(path.resolve(__dirname, '../dll'));
+    files.forEach(file => {
+        if(/.*\.dll.js/.test(file)) {
+            plugins.push(new AddAssetHtmlWebpackPlugin({
+                filepath: path.resolve(__dirname, '../dll', file)
+            }));
+        }
+        if(/.*\.manifest.js/.test(file)) {
+            plugins.push(new webpack.DllReferencePlugin({
+                manifest: path.resolve(__dirname, '../dll', file)
+            }));
+        }
+    });
+    return plugins;
+};
+// const plugins = [
+//     new HtmlWebpackPlugin({
+//         template: 'src/index.html'
+//     }),
+//     new webpack.ProvidePlugin({
+//         $: 'jquery',
+//         _join: ['lodash', 'join']
+//     })
+// ];
+
 
 const commonConfig = {
     entry: {
-        'main': './src/index.js'
+        'index': './src/index.js'
     },
     resolve: {
         extensions: ['.js', '.jsx'],
@@ -69,7 +84,6 @@ const commonConfig = {
             loader: ['babel-loader', 'eslint-loader']
         }]
     },
-    plugins,
     performance: false,
     optimization: {
         runtimeChunk: {
@@ -101,10 +115,11 @@ const commonConfig = {
     output: {
         // publicPath: 'http://cdn.com.cn',
         publicPath: '',
-        
         path: path.resolve(__dirname, '../dist')
     }
 };
+
+commonConfig.plugins = makePlugins(commonConfig);
 
 module.exports = (env) => {
     if(env && env.production) {
