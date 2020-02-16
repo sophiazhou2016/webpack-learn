@@ -36,6 +36,7 @@ const devConfig = {
         ]
     },
     devServer: {
+        overlay: true,
         contentBase: './dist',
         open: true,
         port: 8080,
