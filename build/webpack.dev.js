@@ -39,11 +39,17 @@ const devConfig = {
         contentBase: './dist',
         open: true,
         port: 8080,
-        hot: true
+        hot: true,
         // hotOnly: true
-        // proxy: {
-        //     '/api': 'http://localhost:3000'
-        // }
+        proxy: {
+            // '/react/api': 'http://www.dell-lee.com'
+            '/react/api': {
+                target: 'http://www.dell-lee.com',
+                pathRewrite: {
+                    'header.json': 'demo.json'
+                }
+            }
+        }
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
