@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
@@ -5,10 +6,17 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const devConfig = require('./webpack.dev.js');
 const prodConfig = require('./webpack.product.js');
+const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 
 const commonConfig = {
     entry: {
         'main': './src/index.js'
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        alias: {
+            '~': path.resolve(__dirname, '../src')
+        }
     },
     module: {
         rules: [{
@@ -41,6 +49,12 @@ const commonConfig = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             _join: ['lodash', 'join']
+        }),
+        new AddAssetHtmlWebpackPlugin({
+            filepath: path.resolve(__dirname, '../dll/vendors.dll.js')
+        }),
+        new webpack.DllReferencePlugin({
+            manifest: path.resolve(__dirname, '../dll/vendors.manifest.js')
         })
     ],
     performance: false,

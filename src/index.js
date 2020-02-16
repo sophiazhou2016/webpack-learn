@@ -3,6 +3,9 @@ import $ from 'jquery';
 import ui from './ui.js';
 import axios from 'axios';
 
+import click from '~/click';
+click();
+
 axios.get('/react/api/header.json').then(res => {
     console.log('axois get:', res);
 });
