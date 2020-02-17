@@ -1,3 +1,8 @@
+const loaderUtils = require('loader-utils');
 module.exports = function(source) { // 注意不要使用箭头函数，this指向会有问题
-    return source.replace('Alsa', 'Alsa zhou');
+    // console.log('this.query:', this.query);
+    // const options = loaderUtils.getOptions(this);
+    const result = source.replace('zhou', 'xian');
+
+   this.callback(null, result);
 };

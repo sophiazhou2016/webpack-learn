@@ -9,11 +9,22 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js'
     },
+    resolveLoader: {
+        modules: ['node_modules', './loaders']
+    },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                use: [path.resolve(__dirname, './loaders/replaceLoader.js')]
+                // use: [path.resolve(__dirname, './loaders/replaceLoader.js')]
+                use: [{
+                    loader: 'replaceLoader'
+                }, {
+                    loader: 'replaceLoaderAsync',
+                    options: {
+                        name: 'alsa'
+                    }
+                }]
             }
         ]
     }
