@@ -60,9 +60,11 @@
     "last 3 iOS versions"
   ],
   "dependencies": {
+    "@babel/parser": "^7.8.4",
     "@babel/polyfill": "^7.8.3",
     "@babel/runtime": "^7.8.4",
     "@babel/runtime-corejs2": "^7.8.4",
+    "@babel/traverse": "^7.8.4",
     "lodash": "^4.17.15",
     "optimize-css-assets-webpack-plugin": "^5.0.3"
   },
