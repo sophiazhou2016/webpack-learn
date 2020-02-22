@@ -9,7 +9,7 @@ click();
 axios.get('/react/api/header.json').then(res => {
     console.log('axois get:', res);
 });
-ui(z);
+ui();
 
 const dom = $('div');
 dom.html(_.join(['Dell', 'Lee'], '***'));
